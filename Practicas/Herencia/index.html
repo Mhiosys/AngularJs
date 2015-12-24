@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="MyFirstApp">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Herencia con AngularJs</title>
+
+		<meta name="description" content="Dynamic tables and grids using jqGrid plugin" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="controller.js"></script>
+	</head>
+
+	<body ng-controller="FirstController">
+		<p><strong>Valor de Scope: </strong>{{$parent.nombre}}</p>
+		<div ng-controller="ChildController">
+			<p><strong>Valor de FirstController: </strong>{{$parent.nombre}}</p>
+			<p><strong>Valor de ChildController: </strong>{{nombre}}</p>		
+			<input type="text" ng-model="$parent.$parent.nombre">	
+		</div>		
+        <script type="text/javascript">
+        </script>
+	</body>
+</html>
